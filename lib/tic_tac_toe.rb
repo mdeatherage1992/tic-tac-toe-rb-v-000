@@ -1,8 +1,14 @@
-
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+<<<<<<< HEAD
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+=======
+>>>>>>> 18d4a4ab08d04b31e1641135e8914bc74c965114
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -13,7 +19,11 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6]
 ]
+<<<<<<< HEAD
 
+=======
+  #binding.pry
+>>>>>>> 18d4a4ab08d04b31e1641135e8914bc74c965114
 def won?(board)
   WIN_COMBINATIONS.detect do |mini|
   if  mini.all? { |space| board[space] == "X"}
@@ -35,12 +45,31 @@ def full?(board)
 end
 
 def draw?(board)
+<<<<<<< HEAD
 full?(board) && !won?(board)
 end
 
 def over?(board)
   #binding.pry
   draw?(board) || won?(board)
+=======
+  if full?(board)
+    true
+  end
+  if won?(board)
+    false
+  else
+    true
+  end
+end
+
+def over?(board)
+  if !full?(board) && !won?(board)
+    false
+  else
+    true
+  end
+>>>>>>> 18d4a4ab08d04b31e1641135e8914bc74c965114
 end
 
 def winner(board)
